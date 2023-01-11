@@ -28,11 +28,12 @@ const KEYS = [
     "z",
 ]
 type KeyboardProps = {
+    disabled:boolean
     activeLetter: string[],
     inactiveLetters: string[],
     addGuessedLetter: (letter: string) => void
 }
-export function Keyboard({ activeLetter, inactiveLetters, addGuessedLetter }: KeyboardProps) {
+export function Keyboard({ activeLetter,disabled=false, inactiveLetters, addGuessedLetter }: KeyboardProps) {
     return (
         <div style={{
             display: "grid",
@@ -48,7 +49,7 @@ export function Keyboard({ activeLetter, inactiveLetters, addGuessedLetter }: Ke
                     className={`${styles.btn} ,
                      ${isActive? styles.active: ""} ,
                      ${isinactive? styles.inactive: ""} `}
-                     disabled={isActive||isinactive}
+                     disabled={isActive||isinactive||disabled}
                     key={key}>
                     {key}
                 </button>

@@ -12,11 +12,12 @@
   }
   
   .btn.active {
-    background-color: hsl(200, 100%, 50%);
+    background-color: hsl(155, 100%, 50%);
     color: white;
-  }
-  
-  .btn.inactive {
+}
+
+.btn.inactive {
+      background-color: hsla(0, 100%, 50%, 0.5);
     opacity: .3;
   }
   
